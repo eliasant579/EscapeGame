@@ -27,7 +27,6 @@ namespace EscapeGame
         {
 
             // scenes 1 & 8 & fights & KO are not yes/no decisions. Managed differently
-
             if (e.KeyCode == Keys.R)                //red button (left)
             {
                 switch (scene)
@@ -100,12 +99,10 @@ namespace EscapeGame
                     keysTextBox.Visible = true;
                     redAnswerLabel.Text = null;
                     blueAnswerLabel.Text = null;
-                    mainOutputLabel.Text = "Which of the keys is the right one?";
+                    mainOutputLabel.Text = "Which of the key is the right one?";
                     break;
                 case 2:
-                    mainOutputLabel.Text = "Some stuff";
-                    redAnswerLabel.Text = "Ye";
-                    blueAnswerLabel.Text = "yay";
+                    //scene 2 has been moved inside the textbox event, line @@@
                     break;
                 case 3:
                     mainOutputLabel.Text = "Some stuff";
@@ -166,9 +163,16 @@ namespace EscapeGame
                 if (keysTextBox.Text == RIGHT_KEY_S1)
                 {
                     keysTextBox.Text = null;
-                    keysTextBox.Visible = false;
-                    redAnswerLabel.Text = "Press any key (exept y) to continue.";
-                    scene = 2;
+                    redAnswerLabel.Text = "Press c to continue.";
+
+                    //this is scene 2
+                    if (e.KeyCode == Keys.C)
+                    {
+                        keysTextBox.Visible = false;
+                        mainOutputLabel.Text = "Do you want to set the other prisoners free?";
+                        redAnswerLabel.Text = "Yes";
+                        blueAnswerLabel.Text = "No";
+                    }
                 }
                 else
                 {
