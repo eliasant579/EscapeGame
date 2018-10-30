@@ -20,6 +20,9 @@ namespace EscapeGame
             InitializeComponent();
         }
 
+        const string RIGHT_KEY_S1 = "5";
+        const string RIGHT_KEY_S8 = "8";
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -32,6 +35,9 @@ namespace EscapeGame
                     case 0:
                         angerValue = true;
                         scene = 1;
+                        break;
+                    case 2:
+                        //80% fight, to scene 3 or other case (5 or 7)
                         break;
                     case 3:
                         scene = 6;
@@ -80,7 +86,7 @@ namespace EscapeGame
                 }
                 else
                 {
-                    //Oak's words echoed... There's a time and place for everything, but not now.
+                    mainOutputLabel.Text = "Oak's words echoed... /nThere's a time and place for everything, but not now.";
                     return;
                 }
             }
@@ -90,13 +96,16 @@ namespace EscapeGame
                 case 0:
                     break;
                 case 1:
-                    mainOutputLabel.Text = "Some stuff";
-                    redAnswerLabel.Text = "Ye";
-                    blueAnswerLabel.Text = "yay";
+                    //choosing keys
+                    keysTextBox.Visible = true;
+                    redAnswerLabel.Text = null;
+                    blueAnswerLabel.Text = null;
+                    mainOutputLabel.Text = "Which of the keys is the right one?";
                     break;
                 case 2:
                     mainOutputLabel.Text = "Some stuff";
-                    //80% fight, to scene 3 or other case (5 or 7)
+                    redAnswerLabel.Text = "Ye";
+                    blueAnswerLabel.Text = "yay";
                     break;
                 case 3:
                     mainOutputLabel.Text = "Some stuff";
@@ -147,6 +156,26 @@ namespace EscapeGame
                     mainOutputLabel.Text = "Some stuff";
                     //end
                     break;
+            }
+        }
+
+        private void keysTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (keysTextBox.Text == RIGHT_KEY_S1)
+                {
+                    keysTextBox.Text = null;
+                    keysTextBox.Visible = false;
+                    redAnswerLabel.Text = "Press any key (exept y) to continue.";
+                    scene = 2;
+                }
+                else
+                {
+                    redAnswerLabel.Text = "Wrong key or invalid input.";
+                    keysTextBox.Text = null;
+                    return;
+                }
             }
         }
     }
