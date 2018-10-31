@@ -5,8 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+/// <summary>
+/// Elia Santagiuliana gg/11/18
+/// 
+/// Reminder: ask if there's a function for counting time
+/// </summary>
 
 namespace EscapeGame
 {
@@ -23,19 +30,22 @@ namespace EscapeGame
         const string RIGHT_KEY_S1 = "5";
         const string RIGHT_KEY_S8 = "8";
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        public void Form1_KeyDown(object sender, KeyEventArgs e)
+            //gets only one KeyCode
         {
-
             // scenes 1 & 8 & fights & KO are not yes/no decisions. Managed differently
             if (e.KeyCode == Keys.R)                //red button (left)
             {
                 switch (scene)
                 {
                     case 0:
+                        //to scene one counting the value
                         angerValue = true;
                         scene = 1;
                         break;
                     case 2:
+                        //reciving input (perhaps) from satisfied if statement in textbox event
+                        mainOutputLabel.Text = "You got this!";
                         //80% fight, to scene 3 or other case (5 or 7)
                         break;
                     case 3:
@@ -58,6 +68,7 @@ namespace EscapeGame
                 switch (scene)
                 {
                     case 0:
+                        //to scene one without counting the value
                         scene = 1;
                         break;
                     case 2:
@@ -85,11 +96,25 @@ namespace EscapeGame
                 }
                 else
                 {
-                    mainOutputLabel.Text = "Oak's words echoed... /nThere's a time and place for everything, but not now.";
+                    redLabel.Visible = false;
+                    redAnswerLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    blueAnswerLabel.Visible = false;
+                    yellowLabel.Visible = true;
+                    yellowAnswerLabel.Text = "Oak's words echoed... \nThere's a time and place for everything, but not now.";
+                    Refresh();
+                    Thread.Sleep(2100);
+                    yellowAnswerLabel.Text = null;
+                    redLabel.Visible = true;
+                    redAnswerLabel.Visible = true;
+                    blueLabel.Visible = true;
+                    blueAnswerLabel.Visible = true;
+                    yellowLabel.Visible = false;
                     return;
                 }
             }
 
+            //this switch is used if scenes are "standard" decisions, without looping or testing
             switch (scene)
             {
                 case 0:
@@ -99,7 +124,39 @@ namespace EscapeGame
                     keysTextBox.Visible = true;
                     redAnswerLabel.Text = null;
                     blueAnswerLabel.Text = null;
+                    redLabel.Visible = false;
+                    blueLabel.Visible = false;
                     mainOutputLabel.Text = "Which of the key is the right one?";
+
+                    /*
+                    if (keysTextBox.Text == null)
+                    {
+                        if (keysTextBox.Text == RIGHT_KEY_S1)
+                        {
+                            //do stuff
+                        }
+                        else
+
+                    }
+                    */
+
+                    if (/*gets an input from a text box and compares it*/)
+                    {
+                        redLabel.Visible = true;
+                        blueLabel.Visible = true;
+                        keysTextBox.Text = null;
+                        keysTextBox.Visible = false;
+                        mainOutputLabel.Text = "Right key! \nDo you want to set the other prisoners free?";
+                        redAnswerLabel.Text = "Yes";
+                        blueAnswerLabel.Text = "No";
+                        //how do I leave this method and go back to from1 keydown?
+                    }
+                    else
+                    {
+                        redAnswerLabel.Text = "Wrong key or invalid input.";
+                        keysTextBox.Text = null;
+                    }
+
                     break;
                 case 2:
                     //scene 2 has been moved inside the textbox event, line @@@
@@ -156,31 +213,29 @@ namespace EscapeGame
             }
         }
 
+        /*
         private void keysTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (keysTextBox.Text == RIGHT_KEY_S1)
                 {
+                    redLabel.Visible = true;
+                    blueLabel.Visible = true;
                     keysTextBox.Text = null;
-                    redAnswerLabel.Text = "Press c to continue.";
-
-                    //this is scene 2
-                    if (e.KeyCode == Keys.C)
-                    {
-                        keysTextBox.Visible = false;
-                        mainOutputLabel.Text = "Do you want to set the other prisoners free?";
-                        redAnswerLabel.Text = "Yes";
-                        blueAnswerLabel.Text = "No";
-                    }
+                    keysTextBox.Visible = false;
+                    mainOutputLabel.Text = "Right key! \nDo you want to set the other prisoners free?";
+                    redAnswerLabel.Text = "Yes";
+                    blueAnswerLabel.Text = "No";
+                    //how do I leave this method and go back to from1 keydown?
                 }
                 else
                 {
                     redAnswerLabel.Text = "Wrong key or invalid input.";
                     keysTextBox.Text = null;
-                    return;
                 }
             }
         }
+        */
     }
 }

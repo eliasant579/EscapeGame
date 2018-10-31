@@ -36,15 +36,15 @@
             this.blueLabel = new System.Windows.Forms.Label();
             this.yellowLabel = new System.Windows.Forms.Label();
             this.keysTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mainOutputLabel
             // 
             this.mainOutputLabel.AutoSize = true;
-            this.mainOutputLabel.Location = new System.Drawing.Point(41, 22);
-            this.mainOutputLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.mainOutputLabel.Location = new System.Drawing.Point(55, 27);
             this.mainOutputLabel.Name = "mainOutputLabel";
-            this.mainOutputLabel.Size = new System.Drawing.Size(401, 39);
+            this.mainOutputLabel.Size = new System.Drawing.Size(531, 51);
             this.mainOutputLabel.TabIndex = 0;
             this.mainOutputLabel.Text = "You are in jail. \r\nIt\'s nightime and you\' ve just wake up in pain because sometin" +
     "g was thrown at you. \r\nDo you shout angrily to the other prisoners?";
@@ -52,73 +52,77 @@
             // redAnswerLabel
             // 
             this.redAnswerLabel.AutoSize = true;
-            this.redAnswerLabel.Location = new System.Drawing.Point(94, 134);
-            this.redAnswerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.redAnswerLabel.Location = new System.Drawing.Point(125, 165);
             this.redAnswerLabel.Name = "redAnswerLabel";
-            this.redAnswerLabel.Size = new System.Drawing.Size(25, 13);
+            this.redAnswerLabel.Size = new System.Drawing.Size(32, 17);
             this.redAnswerLabel.TabIndex = 1;
             this.redAnswerLabel.Text = "Yes";
             // 
             // blueAnswerLabel
             // 
             this.blueAnswerLabel.AutoSize = true;
-            this.blueAnswerLabel.Location = new System.Drawing.Point(94, 184);
-            this.blueAnswerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.blueAnswerLabel.Location = new System.Drawing.Point(125, 232);
             this.blueAnswerLabel.Name = "blueAnswerLabel";
-            this.blueAnswerLabel.Size = new System.Drawing.Size(21, 13);
+            this.blueAnswerLabel.Size = new System.Drawing.Size(26, 17);
             this.blueAnswerLabel.TabIndex = 2;
             this.blueAnswerLabel.Text = "No";
             // 
             // yellowAnswerLabel
             // 
             this.yellowAnswerLabel.AutoSize = true;
-            this.yellowAnswerLabel.Location = new System.Drawing.Point(96, 229);
-            this.yellowAnswerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.yellowAnswerLabel.Location = new System.Drawing.Point(125, 191);
             this.yellowAnswerLabel.Name = "yellowAnswerLabel";
-            this.yellowAnswerLabel.Size = new System.Drawing.Size(0, 13);
+            this.yellowAnswerLabel.Size = new System.Drawing.Size(0, 17);
             this.yellowAnswerLabel.TabIndex = 3;
             // 
             // redLabel
             // 
             this.redLabel.BackColor = System.Drawing.Color.Red;
-            this.redLabel.Location = new System.Drawing.Point(41, 129);
-            this.redLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.redLabel.Location = new System.Drawing.Point(55, 159);
             this.redLabel.Name = "redLabel";
-            this.redLabel.Size = new System.Drawing.Size(48, 19);
+            this.redLabel.Size = new System.Drawing.Size(64, 23);
             this.redLabel.TabIndex = 4;
             // 
             // blueLabel
             // 
             this.blueLabel.BackColor = System.Drawing.Color.Blue;
-            this.blueLabel.Location = new System.Drawing.Point(41, 180);
-            this.blueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.blueLabel.Location = new System.Drawing.Point(55, 226);
             this.blueLabel.Name = "blueLabel";
-            this.blueLabel.Size = new System.Drawing.Size(48, 19);
+            this.blueLabel.Size = new System.Drawing.Size(64, 23);
             this.blueLabel.TabIndex = 5;
             // 
             // yellowLabel
             // 
             this.yellowLabel.BackColor = System.Drawing.Color.Gold;
-            this.yellowLabel.Location = new System.Drawing.Point(41, 224);
-            this.yellowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.yellowLabel.Location = new System.Drawing.Point(55, 191);
             this.yellowLabel.Name = "yellowLabel";
-            this.yellowLabel.Size = new System.Drawing.Size(48, 19);
+            this.yellowLabel.Size = new System.Drawing.Size(64, 23);
             this.yellowLabel.TabIndex = 6;
+            this.yellowLabel.Visible = false;
             // 
             // keysTextBox
             // 
-            this.keysTextBox.Location = new System.Drawing.Point(342, 77);
+            this.keysTextBox.Location = new System.Drawing.Point(326, 24);
+            this.keysTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.keysTextBox.Name = "keysTextBox";
-            this.keysTextBox.Size = new System.Drawing.Size(100, 20);
+            this.keysTextBox.Size = new System.Drawing.Size(132, 22);
             this.keysTextBox.TabIndex = 7;
             this.keysTextBox.Visible = false;
             this.keysTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keysTextBox_KeyDown);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.keysTextBox);
             this.Controls.Add(this.yellowLabel);
             this.Controls.Add(this.blueLabel);
@@ -127,7 +131,7 @@
             this.Controls.Add(this.blueAnswerLabel);
             this.Controls.Add(this.redAnswerLabel);
             this.Controls.Add(this.mainOutputLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -146,6 +150,7 @@
         private System.Windows.Forms.Label blueLabel;
         private System.Windows.Forms.Label yellowLabel;
         private System.Windows.Forms.TextBox keysTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 
