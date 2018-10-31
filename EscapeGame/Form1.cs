@@ -127,39 +127,9 @@ namespace EscapeGame
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
                     mainOutputLabel.Text = "Which of the key is the right one?";
-
-                    /*
-                    if (keysTextBox.Text == null)
-                    {
-                        if (keysTextBox.Text == RIGHT_KEY_S1)
-                        {
-                            //do stuff
-                        }
-                        else
-
-                    }
-                    */
-
-                    if (/*gets an input from a text box and compares it*/)
-                    {
-                        redLabel.Visible = true;
-                        blueLabel.Visible = true;
-                        keysTextBox.Text = null;
-                        keysTextBox.Visible = false;
-                        mainOutputLabel.Text = "Right key! \nDo you want to set the other prisoners free?";
-                        redAnswerLabel.Text = "Yes";
-                        blueAnswerLabel.Text = "No";
-                        //how do I leave this method and go back to from1 keydown?
-                    }
-                    else
-                    {
-                        redAnswerLabel.Text = "Wrong key or invalid input.";
-                        keysTextBox.Text = null;
-                    }
-
                     break;
                 case 2:
-                    //scene 2 has been moved inside the textbox event, line @@@
+                    //free or not?
                     break;
                 case 3:
                     mainOutputLabel.Text = "Some stuff";
@@ -213,7 +183,7 @@ namespace EscapeGame
             }
         }
 
-        /*
+        
         private void keysTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -227,6 +197,8 @@ namespace EscapeGame
                     mainOutputLabel.Text = "Right key! \nDo you want to set the other prisoners free?";
                     redAnswerLabel.Text = "Yes";
                     blueAnswerLabel.Text = "No";
+                    scene = 2;
+                    this.Focus();
                     //how do I leave this method and go back to from1 keydown?
                 }
                 else
@@ -236,6 +208,6 @@ namespace EscapeGame
                 }
             }
         }
-        */
+        
     }
 }
