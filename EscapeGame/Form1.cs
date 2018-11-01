@@ -15,10 +15,6 @@ using System.Windows.Forms;
 /// Reminder: ask if there's a function for counting time
 /// </summary>
 
-// test of the GitHub repo
-
-    //test 2
-
 namespace EscapeGame
 {
     public partial class Form1 : Form
@@ -75,13 +71,13 @@ namespace EscapeGame
                         scene = 6;
                         break;
                     case 5:
-                        scene = 8;
+                        scene = 9;
                         break;
                     case 9:
                         scene = 8;
                         break;
                     case 11:
-                        scene = 12;
+                        scene = 14;
                         break;
 
                 }
@@ -102,13 +98,13 @@ namespace EscapeGame
                         scene = 7;
                         break;
                     case 5:
-                        scene = 9;
+                        scene = 8;
                         break;
                     case 9:
                         scene = 11;
                         break;
                     case 11:
-                        scene = 14;
+                        scene = 12;
                         break;
                 }
             }
@@ -250,7 +246,7 @@ namespace EscapeGame
                     keysTextBox.Text = null;
                 }
             }
-            if (e.KeyCode == Keys.Enter && scene == 8)
+            else if (e.KeyCode == Keys.Enter && scene == 8)
             {
                 if (keysTextBox.Text == RIGHT_KEY_S8)
                 {
