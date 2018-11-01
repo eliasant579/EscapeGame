@@ -13,6 +13,8 @@ using System.Windows.Forms;
 /// Elia Santagiuliana gg/11/18
 /// 
 /// Reminder: ask if there's a function for counting time
+/// define the end of the game
+/// decide if you want to use the timer or not
 /// </summary>
 
 namespace EscapeGame
@@ -48,10 +50,12 @@ namespace EscapeGame
                     case 2:
                         //coming from textbox event
                         mainOutputLabel.Text = "There is an high probability of a fight";
+                        Refresh();
                         Thread.Sleep(2000);
                         if (randGen.Next(1, 101) <= 80)
                         {
                             mainOutputLabel.Text = "A fight is starting!";
+                            Refresh();
                             Thread.Sleep(1000);
                             if (randGen.Next(1, 101) <= 50 || angerValue == true)
                             {
@@ -64,6 +68,7 @@ namespace EscapeGame
                         }
                         else
                         {
+                            mainOutputLabel.Text = "You manage to leave the fight, so y";
                             scene = 5;
                         }
                         break;
@@ -92,6 +97,7 @@ namespace EscapeGame
                         break;
                     case 2:
                         //coming from textbox event
+                        mainOutputLabel.Text = "Y";
                         scene = 5;
                         break;
                     case 3:
@@ -158,9 +164,9 @@ namespace EscapeGame
                     break;
                 case 4:
                     mainOutputLabel.Text = "You have been knocked out during the fight";
-                    if (angerValue == true)
+                    if (angerValue == true) //if shouted at the beggining
                     {
-                        mainOutputLabel.Text += ":\nthe other prisoners were anry with you because you woke them up yelling.";
+                        mainOutputLabel.Text += ":\nthe other prisoners were angry with you because you woke them up yelling.";
                     }
                     else
                     {
@@ -169,15 +175,13 @@ namespace EscapeGame
                     //end
                     break;
                 case 5:
-                    mainOutputLabel.Text = "You continue alone. Do you go right or left?";
+                    mainOutputLabel.Text += "ou continue alone. Do you go right or left?";
                     redAnswerLabel.Text = "Right";
                     blueAnswerLabel.Text = "Left";
                     break;
                 case 6:
                     mainOutputLabel.Text = "You find a door and together you manage to knock it down";
-                    goto case 11;
-                    //scene = 11;
-                    //break;
+                    goto case 11;                               //fall through
                 case 7:
                     mainOutputLabel.Text = "The prisoners you just set free are too noisy:\n" +
                         "a bunch of officers notice you and you are all forced inside your cells.";
@@ -203,19 +207,44 @@ namespace EscapeGame
                     break;
                 case 11:
                     //yellowAnswerLabel
+                    redLabel.Visible = true;
+                    blueLabel.Visible = true;
+                    yellowLabel.Visible = true;
                     mainOutputLabel.Text = "You are finally outside the prison! Which way do you go?";
-                    redAnswerLabel.Text = "Ye";
-                    blueAnswerLabel.Text = "yay";
+                    redAnswerLabel.Text = "Right";
+                    blueAnswerLabel.Text = "Left";
+                    yellowAnswerLabel.Text = "Straight on";
                     break;
+
+                    //OUTSIDE THE PRISON
+
                 case 12:
+                    redLabel.Visible = false;
+                    redAnswerLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    blueAnswerLabel.Visible = false;
+                    yellowLabel.Visible = true;
+                    yellowAnswerLabel.Visible = false;
                     mainOutputLabel.Text = "You end up in the courthouse. \nAgain.";
                     //end
                     break;
                 case 13:
+                    redLabel.Visible = false;
+                    redAnswerLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    blueAnswerLabel.Visible = false;
+                    yellowLabel.Visible = true;
+                    yellowAnswerLabel.Visible = false;
                     mainOutputLabel.Text = "You end up in a curch and become a minister to escape the police.";
                     //end
                     break;
                 case 14:
+                    redLabel.Visible = false;
+                    redAnswerLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    blueAnswerLabel.Visible = false;
+                    yellowLabel.Visible = true;
+                    yellowAnswerLabel.Visible = false;
                     mainOutputLabel.Text = "You end up in Stratford Central Secondary School.\n" +
                         "At least it's not St.Mike's";
                     //end
@@ -224,11 +253,13 @@ namespace EscapeGame
         }
 
         
+
+        //textbox event
         private void keysTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && scene == 1)
+            if (e.KeyCode == Keys.Enter && scene == 1)          //enter is pressed the first time that the textbox appears
             {
-                if (keysTextBox.Text == RIGHT_KEY_S1)
+                if (keysTextBox.Text == RIGHT_KEY_S1)           //check the right key
                 {
                     redLabel.Visible = true;
                     blueLabel.Visible = true;
@@ -240,18 +271,16 @@ namespace EscapeGame
                     blueAnswerLabel.Text = "No";
                     this.Focus();                   //leave this method
                 }
-                else
+                else                                            //wrong input
                 {
                     redAnswerLabel.Text = "Wrong key or invalid input.";
                     keysTextBox.Text = null;
                 }
             }
-            else if (e.KeyCode == Keys.Enter && scene == 8)
+            else if (e.KeyCode == Keys.Enter && scene == 8)     //enter is pressed the second time the textbox shows up
             {
-                if (keysTextBox.Text == RIGHT_KEY_S8)
+                if (keysTextBox.Text == RIGHT_KEY_S8)           //check the key
                 {
-                    redLabel.Visible = true;
-                    blueLabel.Visible = true;
                     keysTextBox.Text = null;
                     keysTextBox.Visible = false;
                     scene = 11;
@@ -259,13 +288,16 @@ namespace EscapeGame
                         "Press any key to continue.";
                     this.Focus();                   //leave this method
                 }
-                else
+                else                                            //wrong input
                 {
+                    keysTextBox.Text = null;
+                    redAnswerLabel.Text = "Wrong key!";
                     i++;
-                    if (i == 3)
+                    if (i == 3)                                 //if wrong three times end the game
                     {
                         //scene 10
                         mainOutputLabel.Text = "You have been caught and brought back to your cell.";
+                        redAnswerLabel.Text = null;
                         //end
                     }
                 }

@@ -102,7 +102,7 @@
             // 
             // keysTextBox
             // 
-            this.keysTextBox.Location = new System.Drawing.Point(326, 24);
+            this.keysTextBox.Location = new System.Drawing.Point(58, 82);
             this.keysTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.keysTextBox.Name = "keysTextBox";
             this.keysTextBox.Size = new System.Drawing.Size(132, 22);
