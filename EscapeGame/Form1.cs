@@ -15,6 +15,8 @@ using System.Windows.Forms;
 /// Reminder: ask if there's a function for counting time
 /// </summary>
 
+// test of the GitHub repo
+
 namespace EscapeGame
 {
     public partial class Form1 : Form
