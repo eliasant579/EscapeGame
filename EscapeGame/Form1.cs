@@ -12,32 +12,33 @@ using System.Windows.Forms;
 /// <summary>
 /// Elia Santagiuliana gg/11/18
 /// 
-/// Reminder: ask if there's a function for counting time
 /// define the end of the game
 /// decide if you want to use the timer or not
 /// </summary>
+
+
+// scenes 1 & 8 & fights & KO are not yes/no decisions. Managed differently
+
 
 namespace EscapeGame
 {
     public partial class Form1 : Form
     {
-        int scene = 0;
-        int i = 0;
-        bool angerValue = false;
-        Random randGen = new Random();
+        int scene = 0;                      //scene number
+        int i = 0;                          //counter for scene 8
+        bool angerValue = false;            //answer scene 0
+        Random randGen = new Random();      //random counter
+        const string RIGHT_KEY_S1 = "5";    //scene 1 answer
+        const string RIGHT_KEY_S8 = "8";    //scene 8 answer
+
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        const string RIGHT_KEY_S1 = "5";
-        const string RIGHT_KEY_S8 = "8";
-
         public void Form1_KeyDown(object sender, KeyEventArgs e)
-            //gets only one KeyCode
         {
-            // scenes 1 & 8 & fights & KO are not yes/no decisions. Managed differently
             if (e.KeyCode == Keys.R)                //red button (left)
             {
                 switch (scene)
@@ -49,27 +50,29 @@ namespace EscapeGame
                         break;
                     case 2:
                         //coming from textbox event
-                        mainOutputLabel.Text = "There is an high probability of a fight";
+                        redAnswerLabel.Visible = false;
+                        redLabel.Visible = false;
+                        blueAnswerLabel.Visible = false;
+                        blueLabel.Visible = false;
                         Refresh();
-                        Thread.Sleep(2000);
-                        if (randGen.Next(1, 101) <= 80)
+                        if (randGen.Next() % 101 <= 70)
                         {
                             mainOutputLabel.Text = "A fight is starting!";
                             Refresh();
-                            Thread.Sleep(1000);
-                            if (randGen.Next(1, 101) <= 50 || angerValue == true)
+                            Thread.Sleep(1500);
+                            if (randGen.Next() % 101 <= 50 || angerValue == true)
                             {
                                 scene = 4;
                             }
                             else
-                            {
+                            { 
+                                mainOutputLabel.Text = "You manage to leave the fight, so y";
                                 scene = 5;
                             }
                         }
                         else
                         {
-                            mainOutputLabel.Text = "You manage to leave the fight, so y";
-                            scene = 5;
+                            scene = 3;
                         }
                         break;
                     case 3:
@@ -97,7 +100,6 @@ namespace EscapeGame
                         break;
                     case 2:
                         //coming from textbox event
-                        mainOutputLabel.Text = "Y";
                         scene = 5;
                         break;
                     case 3:
@@ -152,7 +154,7 @@ namespace EscapeGame
                     blueAnswerLabel.Text = null;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    mainOutputLabel.Text = "Which of the key is the right one?";
+                    mainOutputLabel.Text = "Which of the 8 keys is the right one?";
                     break;
                 case 2:
                     //scene moved inside textbox event
@@ -175,6 +177,10 @@ namespace EscapeGame
                     //end
                     break;
                 case 5:
+                    redAnswerLabel.Visible = true;
+                    redLabel.Visible = true;
+                    blueAnswerLabel.Visible = true;
+                    blueLabel.Visible = true;
                     mainOutputLabel.Text += "ou continue alone. Do you go right or left?";
                     redAnswerLabel.Text = "Right";
                     blueAnswerLabel.Text = "Left";
@@ -223,7 +229,7 @@ namespace EscapeGame
                     redAnswerLabel.Visible = false;
                     blueLabel.Visible = false;
                     blueAnswerLabel.Visible = false;
-                    yellowLabel.Visible = true;
+                    yellowLabel.Visible = false;
                     yellowAnswerLabel.Visible = false;
                     mainOutputLabel.Text = "You end up in the courthouse. \nAgain.";
                     //end
@@ -233,7 +239,7 @@ namespace EscapeGame
                     redAnswerLabel.Visible = false;
                     blueLabel.Visible = false;
                     blueAnswerLabel.Visible = false;
-                    yellowLabel.Visible = true;
+                    yellowLabel.Visible = false;
                     yellowAnswerLabel.Visible = false;
                     mainOutputLabel.Text = "You end up in a curch and become a minister to escape the police.";
                     //end
@@ -243,7 +249,7 @@ namespace EscapeGame
                     redAnswerLabel.Visible = false;
                     blueLabel.Visible = false;
                     blueAnswerLabel.Visible = false;
-                    yellowLabel.Visible = true;
+                    yellowLabel.Visible = false;
                     yellowAnswerLabel.Visible = false;
                     mainOutputLabel.Text = "You end up in Stratford Central Secondary School.\n" +
                         "At least it's not St.Mike's";
@@ -297,6 +303,7 @@ namespace EscapeGame
                     {
                         //scene 10
                         mainOutputLabel.Text = "You have been caught and brought back to your cell.";
+                        keysTextBox.Visible = false;
                         redAnswerLabel.Text = null;
                         //end
                     }
