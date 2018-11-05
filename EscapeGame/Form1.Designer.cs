@@ -52,7 +52,7 @@
             // redAnswerLabel
             // 
             this.redAnswerLabel.AutoSize = true;
-            this.redAnswerLabel.Location = new System.Drawing.Point(125, 165);
+            this.redAnswerLabel.Location = new System.Drawing.Point(120, 146);
             this.redAnswerLabel.Name = "redAnswerLabel";
             this.redAnswerLabel.Size = new System.Drawing.Size(32, 17);
             this.redAnswerLabel.TabIndex = 1;
@@ -61,7 +61,7 @@
             // blueAnswerLabel
             // 
             this.blueAnswerLabel.AutoSize = true;
-            this.blueAnswerLabel.Location = new System.Drawing.Point(125, 232);
+            this.blueAnswerLabel.Location = new System.Drawing.Point(120, 226);
             this.blueAnswerLabel.Name = "blueAnswerLabel";
             this.blueAnswerLabel.Size = new System.Drawing.Size(26, 17);
             this.blueAnswerLabel.TabIndex = 2;
@@ -70,7 +70,7 @@
             // yellowAnswerLabel
             // 
             this.yellowAnswerLabel.AutoSize = true;
-            this.yellowAnswerLabel.Location = new System.Drawing.Point(125, 191);
+            this.yellowAnswerLabel.Location = new System.Drawing.Point(120, 186);
             this.yellowAnswerLabel.Name = "yellowAnswerLabel";
             this.yellowAnswerLabel.Size = new System.Drawing.Size(0, 17);
             this.yellowAnswerLabel.TabIndex = 3;
@@ -78,7 +78,7 @@
             // redLabel
             // 
             this.redLabel.BackColor = System.Drawing.Color.Red;
-            this.redLabel.Location = new System.Drawing.Point(55, 159);
+            this.redLabel.Location = new System.Drawing.Point(50, 140);
             this.redLabel.Name = "redLabel";
             this.redLabel.Size = new System.Drawing.Size(64, 23);
             this.redLabel.TabIndex = 4;
@@ -86,7 +86,7 @@
             // blueLabel
             // 
             this.blueLabel.BackColor = System.Drawing.Color.Blue;
-            this.blueLabel.Location = new System.Drawing.Point(55, 226);
+            this.blueLabel.Location = new System.Drawing.Point(50, 220);
             this.blueLabel.Name = "blueLabel";
             this.blueLabel.Size = new System.Drawing.Size(64, 23);
             this.blueLabel.TabIndex = 5;
@@ -94,7 +94,7 @@
             // yellowLabel
             // 
             this.yellowLabel.BackColor = System.Drawing.Color.Gold;
-            this.yellowLabel.Location = new System.Drawing.Point(55, 191);
+            this.yellowLabel.Location = new System.Drawing.Point(50, 180);
             this.yellowLabel.Name = "yellowLabel";
             this.yellowLabel.Size = new System.Drawing.Size(64, 23);
             this.yellowLabel.TabIndex = 6;

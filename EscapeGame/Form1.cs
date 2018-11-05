@@ -54,12 +54,16 @@ namespace EscapeGame
                         redLabel.Visible = false;
                         blueAnswerLabel.Visible = false;
                         blueLabel.Visible = false;
+                        mainOutputLabel.Text = null;
+                        mainOutputLabel.Text = "You open their cells and tell them to be quiet." +
+                            "\nSome of them try to punch others in a friendly way.";
                         Refresh();
+                        Thread.Sleep(5000);
                         if (randGen.Next() % 101 <= 70)
                         {
                             mainOutputLabel.Text = "A fight is starting!";
                             Refresh();
-                            Thread.Sleep(1500);
+                            Thread.Sleep(2500);
                             if (randGen.Next() % 101 <= 50 || angerValue == true)
                             {
                                 scene = 4;
@@ -100,6 +104,7 @@ namespace EscapeGame
                         break;
                     case 2:
                         //coming from textbox event
+                        mainOutputLabel.Text = "Y";
                         scene = 5;
                         break;
                     case 3:
@@ -154,12 +159,20 @@ namespace EscapeGame
                     blueAnswerLabel.Text = null;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    mainOutputLabel.Text = "Which of the 8 keys is the right one?";
+                    mainOutputLabel.Text = "You realise it was a bunch of eight keys! " +
+                        "\nMaybe yours is among them, let's find out!" +
+                        "\nInsert the number of the key you want to use";
                     break;
                 case 2:
                     //scene moved inside textbox event
                     break;
                 case 3:
+                    //make stuff visible again
+                    redAnswerLabel.Visible = true;
+                    blueAnswerLabel.Visible = true;
+                    redLabel.Visible = true;
+                    blueLabel.Visible = true;
+
                     mainOutputLabel.Text = "You continue with the help of the other prisoners. Do you go left or right?";
                     redAnswerLabel.Text = "Right";
                     blueAnswerLabel.Text = "Left";
@@ -256,9 +269,7 @@ namespace EscapeGame
                     //end
                     break;
             }
-        }
-
-        
+        }        
 
         //textbox event
         private void keysTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -272,7 +283,8 @@ namespace EscapeGame
                     keysTextBox.Text = null;
                     keysTextBox.Visible = false;
                     scene = 2;                      //this is scene two;
-                    mainOutputLabel.Text = "Right key! \nDo you want to set the other prisoners free?";
+                    mainOutputLabel.Text = "Right key! \nYou move quietly into the hallway, where you notice the other cells.\n" +
+                        "Do you want to set the other prisoners free?";
                     redAnswerLabel.Text = "Yes";
                     blueAnswerLabel.Text = "No";
                     this.Focus();                   //leave this method
@@ -309,7 +321,14 @@ namespace EscapeGame
                     }
                 }
             }
-        }
+        }  
         
+        void End()
+        {
+            mainOutputLabel.Text = "Do you want to play again?";
+            this.Focus();
+        }
+
+
     }
 }
