@@ -44,10 +44,10 @@
             this.mainOutputLabel.AutoSize = true;
             this.mainOutputLabel.Location = new System.Drawing.Point(55, 27);
             this.mainOutputLabel.Name = "mainOutputLabel";
-            this.mainOutputLabel.Size = new System.Drawing.Size(531, 51);
+            this.mainOutputLabel.Size = new System.Drawing.Size(547, 51);
             this.mainOutputLabel.TabIndex = 0;
-            this.mainOutputLabel.Text = "You are in jail. \r\nIt\'s nightime and you\' ve just wake up in pain because sometin" +
-    "g was thrown at you. \r\nDo you shout angrily to the other prisoners?";
+            this.mainOutputLabel.Text = "You are in jail. \r\nIt\'s nightime and you\' ve just waken up in pain because someth" +
+    "ing was thrown at you. \r\nDo you shout angrily to the other prisoners?";
             // 
             // redAnswerLabel
             // 
