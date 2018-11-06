@@ -49,9 +49,9 @@ namespace EscapeGame
                         break;
                     case 2:
                         //coming from textbox event
-                        redAnswerLabel.Visible = false;
+                        redAnswerLabel.Text = null;
                         redLabel.Visible = false;
-                        blueAnswerLabel.Visible = false;
+                        blueAnswerLabel.Text = null;
                         blueLabel.Visible = false;
                         mainOutputLabel.Text = null;
                         mainOutputLabel.Text = "You open their cells and tell them to be quiet." +
@@ -132,7 +132,10 @@ namespace EscapeGame
                     blueLabel.Visible = false;
                     blueAnswerLabel.Visible = false;
                     yellowLabel.Visible = true;
-                    yellowAnswerLabel.Text = "Oak's words echoed... \nThere's a time and place for everything, but not now.";
+                    yellowAnswerLabel.Text = "Oak's words echoed... " +
+                        "\nThere's a time and place for everything, " +
+                        "\nbut not now...";
+                    pictureBox.Visible = false;
                     Refresh();
                     Thread.Sleep(2100);
                     yellowAnswerLabel.Text = null;
@@ -141,6 +144,7 @@ namespace EscapeGame
                     blueLabel.Visible = true;
                     blueAnswerLabel.Visible = true;
                     yellowLabel.Visible = false;
+                    pictureBox.Visible = true;
                     //return;
                 }
             }
@@ -327,16 +331,14 @@ namespace EscapeGame
         {
             Refresh();
             redLabel.Visible = false;
-            redAnswerLabel.Visible = false;
+            redAnswerLabel.Text = null;
             blueLabel.Visible = false;
-            blueAnswerLabel.Visible = false;
+            blueAnswerLabel.Text = null;
             yellowLabel.Visible = false;
-            yellowAnswerLabel.Visible = false;
+            yellowAnswerLabel.Text = null;
             Thread.Sleep(3000);
             redLabel.Visible = true;
-            redAnswerLabel.Visible = true;
             blueLabel.Visible = true;
-            blueAnswerLabel.Visible = true;
             mainOutputLabel.Text += "\n\nDo you want to play again?";
             redAnswerLabel.Text = "Yes";
             blueAnswerLabel.Text = "No";
