@@ -247,7 +247,7 @@ namespace EscapeGame
                         "At least it's not St.Mike's";
                     End();
                     break;
-                case 20:
+                case 400:
                     if (e.KeyCode == Keys.R)
                     {
                         //restart game
@@ -262,6 +262,7 @@ namespace EscapeGame
                     else if (e.KeyCode == Keys.B)
                     {
                         //exit
+                        mainOutputLabel.Text = "Thanks for playing";
                         Thread.Sleep(500);
                         Application.Exit();
                     }
@@ -339,7 +340,7 @@ namespace EscapeGame
             mainOutputLabel.Text += "\n\nDo you want to play again?";
             redAnswerLabel.Text = "Yes";
             blueAnswerLabel.Text = "No";
-            scene = 20;
+            scene = 400;
         }
 
     }

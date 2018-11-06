@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainOutputLabel = new System.Windows.Forms.Label();
             this.redAnswerLabel = new System.Windows.Forms.Label();
             this.blueAnswerLabel = new System.Windows.Forms.Label();
@@ -37,14 +38,17 @@
             this.yellowLabel = new System.Windows.Forms.Label();
             this.keysTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // mainOutputLabel
             // 
             this.mainOutputLabel.AutoSize = true;
-            this.mainOutputLabel.Location = new System.Drawing.Point(55, 27);
+            this.mainOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainOutputLabel.Location = new System.Drawing.Point(49, 23);
             this.mainOutputLabel.Name = "mainOutputLabel";
-            this.mainOutputLabel.Size = new System.Drawing.Size(547, 51);
+            this.mainOutputLabel.Size = new System.Drawing.Size(727, 72);
             this.mainOutputLabel.TabIndex = 0;
             this.mainOutputLabel.Text = "You are in jail. \r\nIt\'s nightime and you\' ve just waken up in pain because someth" +
     "ing was thrown at you. \r\nDo you shout angrily to the other prisoners?";
@@ -52,27 +56,30 @@
             // redAnswerLabel
             // 
             this.redAnswerLabel.AutoSize = true;
-            this.redAnswerLabel.Location = new System.Drawing.Point(120, 146);
+            this.redAnswerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.redAnswerLabel.Location = new System.Drawing.Point(120, 143);
             this.redAnswerLabel.Name = "redAnswerLabel";
-            this.redAnswerLabel.Size = new System.Drawing.Size(32, 17);
+            this.redAnswerLabel.Size = new System.Drawing.Size(37, 20);
             this.redAnswerLabel.TabIndex = 1;
             this.redAnswerLabel.Text = "Yes";
             // 
             // blueAnswerLabel
             // 
             this.blueAnswerLabel.AutoSize = true;
-            this.blueAnswerLabel.Location = new System.Drawing.Point(120, 226);
+            this.blueAnswerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blueAnswerLabel.Location = new System.Drawing.Point(120, 223);
             this.blueAnswerLabel.Name = "blueAnswerLabel";
-            this.blueAnswerLabel.Size = new System.Drawing.Size(26, 17);
+            this.blueAnswerLabel.Size = new System.Drawing.Size(30, 20);
             this.blueAnswerLabel.TabIndex = 2;
             this.blueAnswerLabel.Text = "No";
             // 
             // yellowAnswerLabel
             // 
             this.yellowAnswerLabel.AutoSize = true;
-            this.yellowAnswerLabel.Location = new System.Drawing.Point(120, 186);
+            this.yellowAnswerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yellowAnswerLabel.Location = new System.Drawing.Point(120, 183);
             this.yellowAnswerLabel.Name = "yellowAnswerLabel";
-            this.yellowAnswerLabel.Size = new System.Drawing.Size(0, 17);
+            this.yellowAnswerLabel.Size = new System.Drawing.Size(0, 20);
             this.yellowAnswerLabel.TabIndex = 3;
             // 
             // redLabel
@@ -102,10 +109,11 @@
             // 
             // keysTextBox
             // 
-            this.keysTextBox.Location = new System.Drawing.Point(58, 82);
+            this.keysTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keysTextBox.Location = new System.Drawing.Point(53, 103);
             this.keysTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.keysTextBox.Name = "keysTextBox";
-            this.keysTextBox.Size = new System.Drawing.Size(132, 22);
+            this.keysTextBox.Size = new System.Drawing.Size(132, 27);
             this.keysTextBox.TabIndex = 7;
             this.keysTextBox.Visible = false;
             this.keysTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keysTextBox_KeyDown);
@@ -117,11 +125,21 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(379, 143);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(330, 239);
+            this.pictureBox.TabIndex = 8;
+            this.pictureBox.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.keysTextBox);
             this.Controls.Add(this.yellowLabel);
@@ -135,6 +153,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,6 +170,7 @@
         private System.Windows.Forms.Label yellowLabel;
         private System.Windows.Forms.TextBox keysTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
 
