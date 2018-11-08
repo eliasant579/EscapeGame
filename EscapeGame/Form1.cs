@@ -12,7 +12,7 @@ using System.Windows.Forms;
 /// <summary>
 /// Elia Santagiuliana gg/11/18
 /// 
-/// define the end of the game
+/// missing icon, sounds and some images
 /// </summary>
 
 
@@ -179,6 +179,7 @@ namespace EscapeGame
                     blueAnswerLabel.Text = "Left";
                     break;
                 case 4:
+                    //ko image
                     mainOutputLabel.Text = "You have been knocked out during the fight";
                     if (angerValue == true) //if shouted at the beggining
                     {
@@ -191,6 +192,7 @@ namespace EscapeGame
                     End();
                     break;
                 case 5:
+                    pictureBox.BackgroundImage = null;
                     redAnswerLabel.Visible = true;
                     redLabel.Visible = true;
                     blueAnswerLabel.Visible = true;
@@ -200,14 +202,18 @@ namespace EscapeGame
                     blueAnswerLabel.Text = "Left";
                     break;
                 case 6:
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.P_Door;
                     mainOutputLabel.Text = "You find a door and together you manage to knock it down";
+                    Thread.Sleep(4000);
                     goto case 11;                               //fall through
                 case 7:
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.P_Cells;
                     mainOutputLabel.Text = "The prisoners you just set free are too noisy:\n" +
                         "a bunch of officers notice you and you are all forced inside your cells.";
                     End();
                     break;
                 case 8:
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.P_Door;
                     mainOutputLabel.Text = "A officer notices you, act fast!\n" +
                         "Ther's a door in front of you, find the right key!";
                     redLabel.Visible = false;
@@ -217,6 +223,7 @@ namespace EscapeGame
                     keysTextBox.Visible = true;
                     break;
                 case 9:
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.P_Main_Office;
                     mainOutputLabel.Text = "You find yourself inside the main office.\n" +
                         "Do you run the other way or do you act as nothing is happening and walk past?";
                     redAnswerLabel.Text = "Run back!";
@@ -226,7 +233,8 @@ namespace EscapeGame
                     //this scene has been moved in the text box event
                     break;
                 case 11:
-                    //yellowAnswerLabel
+                    //+yellowAnswerLabel
+                    //image free
                     redLabel.Visible = true;
                     blueLabel.Visible = true;
                     yellowLabel.Visible = true;
@@ -239,14 +247,17 @@ namespace EscapeGame
                     //OUTSIDE THE PRISON
 
                 case 12:
+                    //image court house
                     mainOutputLabel.Text = "You end up in the courthouse. \nAgain.";
                     End();
                     break;
                 case 13:
+                    //image church
                     mainOutputLabel.Text = "You end up in a curch and become a minister to escape the police.";
                     End();
                     break;
                 case 14:
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.Scss;
                     mainOutputLabel.Text = "You end up in Stratford Central Secondary School.\n" +
                         "At least it's not St.Mike's";
                     End();
@@ -255,6 +266,7 @@ namespace EscapeGame
                     if (e.KeyCode == Keys.R)
                     {
                         //restart game
+                        pictureBox.BackgroundImage = EscapeGame.Properties.Resources.P_Bed;
                         mainOutputLabel.Text = "You are in jail. \nIt's nightime and you' ve just waken up" +
                             " in pain because something was thrown at you. " +
                             "\nDo you shout angrily to the other prisoners?";
@@ -286,6 +298,7 @@ namespace EscapeGame
                     keysTextBox.Text = null;
                     keysTextBox.Visible = false;
                     scene = 2;                      //this is scene two;
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.P_Cells;
                     mainOutputLabel.Text = "Right key! \nYou move quietly into the hallway, where you notice the other cells.\n" +
                         "Do you want to set the other prisoners free?";
                     redAnswerLabel.Text = "Yes";

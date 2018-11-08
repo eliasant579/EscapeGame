@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainOutputLabel = new System.Windows.Forms.Label();
             this.redAnswerLabel = new System.Windows.Forms.Label();
             this.blueAnswerLabel = new System.Windows.Forms.Label();
@@ -127,10 +126,12 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(239, 132);
+            this.pictureBox.BackgroundImage = global::EscapeGame.Properties.Resources.P_Bed;
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox.Location = new System.Drawing.Point(240, 130);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(537, 306);
+            this.pictureBox.Size = new System.Drawing.Size(550, 300);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 8;
             this.pictureBox.TabStop = false;
             // 
