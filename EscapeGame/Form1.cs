@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
-/// Elia Santagiuliana gg/11/18
+/// Elia Santagiuliana 08/11/18
 /// 
-/// missing icon, sounds and some images
+/// missing icon because battery is running low. I'll fix it asap
 /// </summary>
 
 
