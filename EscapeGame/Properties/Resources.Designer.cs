@@ -71,6 +71,15 @@ namespace EscapeGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Boxing_arena_sound_Samantha_Enrico_246597508 {
+            get {
+                return ResourceManager.GetStream("Boxing_arena_sound_Samantha_Enrico_246597508", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Church {
@@ -97,6 +106,15 @@ namespace EscapeGame.Properties {
             get {
                 object obj = ResourceManager.GetObject("KO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Many_Punches_SoundBible_com_1623072177 {
+            get {
+                return ResourceManager.GetStream("Many_Punches_SoundBible_com_1623072177", resourceCulture);
             }
         }
         

@@ -123,5 +123,14 @@
   <ItemGroup>
     <None Include="Resources\background.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Many Punches-SoundBible.com-1623072177.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boxing_arena_sound-Samantha_Enrico-246597508.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chewbacca Wookie Noise-SoundBible.com-1201859158.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

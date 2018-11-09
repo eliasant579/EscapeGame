@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -59,6 +60,8 @@ namespace EscapeGame
                         Thread.Sleep(5000);
                         if (randGen.Next() % 101 <= 70)
                         {
+                            SoundPlayer fightSound = new SoundPlayer(Properties.Resources.Many_Punches_SoundBible_com_1623072177);
+                            fightSound.Play();
                             mainOutputLabel.Text = "A fight is starting!";
                             Refresh();
                             Thread.Sleep(2500);
@@ -179,6 +182,8 @@ namespace EscapeGame
                     break;
                 case 4:
                     //ko image
+                    SoundPlayer koSound = new SoundPlayer(Properties.Resources.Boxing_arena_sound_Samantha_Enrico_246597508);
+                    koSound.Play();
                     pictureBox.BackgroundImage = EscapeGame.Properties.Resources.KO;
                     mainOutputLabel.Text = "You have been knocked out during the fight";
                     if (angerValue == true) //if shouted at the beggining
@@ -277,6 +282,7 @@ namespace EscapeGame
                         blueAnswerLabel.Text = "No";
                         Refresh();
                         scene = 0;
+                        angerValue = false;
                     }
                     else if (e.KeyCode == Keys.B)
                     {
