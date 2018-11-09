@@ -12,7 +12,6 @@ using System.Windows.Forms;
 /// <summary>
 /// Elia Santagiuliana 08/11/18
 /// 
-/// missing icon because battery is running low. I'll fix it asap
 /// </summary>
 
 

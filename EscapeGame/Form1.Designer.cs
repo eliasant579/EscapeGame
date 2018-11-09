@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainOutputLabel = new System.Windows.Forms.Label();
             this.redAnswerLabel = new System.Windows.Forms.Label();
             this.blueAnswerLabel = new System.Windows.Forms.Label();
@@ -150,6 +151,7 @@
             this.Controls.Add(this.blueAnswerLabel);
             this.Controls.Add(this.redAnswerLabel);
             this.Controls.Add(this.mainOutputLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Escaping from prison";
