@@ -180,6 +180,7 @@ namespace EscapeGame
                     break;
                 case 4:
                     //ko image
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.KO;
                     mainOutputLabel.Text = "You have been knocked out during the fight";
                     if (angerValue == true) //if shouted at the beggining
                     {
@@ -235,6 +236,7 @@ namespace EscapeGame
                 case 11:
                     //+yellowAnswerLabel
                     //image free
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.background;
                     redLabel.Visible = true;
                     blueLabel.Visible = true;
                     yellowLabel.Visible = true;
@@ -248,11 +250,13 @@ namespace EscapeGame
 
                 case 12:
                     //image court house
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.Court_House;
                     mainOutputLabel.Text = "You end up in the courthouse. \nAgain.";
                     End();
                     break;
                 case 13:
                     //image church
+                    pictureBox.BackgroundImage = EscapeGame.Properties.Resources.Church;
                     mainOutputLabel.Text = "You end up in a curch and become a minister to escape the police.";
                     End();
                     break;
